@@ -1,7 +1,6 @@
 
  # INDICE
 
-```markdown
 # Indice
 
 1. [Introduzione](#introduzione)
@@ -76,7 +75,6 @@
         - [`conta_specie`](#conta_specie-1)
         - [`salva`](#salva)
         - [`carica`](#carica)
-```
 
 
 # Documentazione del progetto Zoo
