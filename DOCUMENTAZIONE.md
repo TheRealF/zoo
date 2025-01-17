@@ -3,8 +3,7 @@
 
 # Indice
 
-1. [Introduzione](#introduzione)
-2. [Documentazione del Progetto](#documentazione-del-progetto)
+1. [File implementazione funzioni Zoo](#documentazione-del-progetto)
     - [Funzioni](#funzioni)
         - [`inserisci`](#inserisci)
         - [`serializza`](#serializza)
