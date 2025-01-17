@@ -1,7 +1,82 @@
 
- # TOC
-[TOC]
+ # INDICE
 
+```markdown
+# Indice
+
+1. [Introduzione](#introduzione)
+2. [Documentazione del Progetto](#documentazione-del-progetto)
+    - [Funzioni](#funzioni)
+        - [`inserisci`](#inserisci)
+        - [`serializza`](#serializza)
+        - [`animale`](#animale)
+        - [`elimina`](#elimina)
+        - [`cambia_zona`](#cambia_zona)
+        - [`zone`](#zone)
+        - [`animali_zona`](#animali_zona)
+        - [`zone_animali`](#zone_animali)
+        - [`animali_classe`](#animali_classe)
+        - [`animali_specie`](#animali_specie)
+        - [`animali_ambiente`](#animali_ambiente)
+        - [`animali_con_zampe_almeno`](#animali_con_zampe_almeno)
+        - [`conta_sangue`](#conta_sangue)
+        - [`conta_classe`](#conta_classe)
+        - [`conta_specie`](#conta_specie)
+        - [`conteggio`](#conteggio)
+3. [Documentazione della Classe](#documentazione-della-classe)
+    - [Classe `Animale`](#classe-animale)
+    - [Sottoclassi di `Animale`](#sottoclassi-di-animale)
+        - [Classe `Mammifero`](#classe-mammifero)
+        - [Classe `Uccello`](#classe-uccello)
+        - [Classe `Pesce`](#classe-pesce)
+        - [Classe `Leone`](#classe-leone)
+        - [Classe `Giraffa`](#classe-giraffa)
+        - [Classe `Ippopotamo`](#classe-ippopotamo)
+        - [Classe `Pinguino`](#classe-pinguino)
+        - [Classe `Gufo`](#classe-gufo)
+        - [Classe `PescePagliaccio`](#classe-pescepagliaccio)
+4. [Introduzione alla GUI](#introduzione-alla-gui)
+    - [Struttura del File](#struttura-del-file)
+    - [Classe `ZooApp`](#classe-zooapp)
+    - [Metodi della Classe `ZooApp`](#metodi-della-classe-zooapp)
+        - [`__init__`](#__init__)
+        - [`crea_widgets`](#crea_widgets)
+        - [`aggiorna_lista_animali`](#aggiorna_lista_animali)
+        - [`aggiungi_animale`](#aggiungi_animale)
+        - [`modifica_zona`](#modifica_zona)
+        - [`mostra_stringa_animale`](#mostra_stringa_animale)
+        - [`lista_nomi_specie`](#lista_nomi_specie)
+        - [`list_nomi_ambiente`](#list_nomi_ambiente)
+        - [`conta_animali_classe`](#conta_animali_classe)
+        - [`carica_zoo`](#carica_zoo)
+        - [`salva_zoo`](#salva_zoo)
+        - [`uscita_app`](#uscita_app)
+5. [Introduzione al File `zoo.py`](#introduzione-al-file-zoo.py)
+    - [Struttura del File](#struttura-del-file)
+    - [Classe `Zoo`](#classe-zoo)
+    - [Metodi della Classe `Zoo`](#metodi-della-classe-zoo)
+        - [`__init__`](#__init__-1)
+        - [`aggiungi_animale`](#aggiungi_animale)
+        - [`__str__`](#__str__)
+        - [`__eq__`](#__eq__)
+        - [`inserisci`](#inserisci-1)
+        - [`animale`](#animale-1)
+        - [`zona`](#zona-1)
+        - [`elimina`](#elimina-1)
+        - [`cambia_zona`](#cambia_zona-1)
+        - [`zone`](#zone-1)
+        - [`animali_zona`](#animali_zona-1)
+        - [`zone_animali`](#zone_animali-1)
+        - [`animali_classe`](#animali_classe-1)
+        - [`animali_specie`](#animali_specie-1)
+        - [`animali_ambiente`](#animali_ambiente-1)
+        - [`animali_con_zampe_almeno`](#animali_con_zampe_almeno-1)
+        - [`conta_sangue`](#conta_sangue-1)
+        - [`conta_classe`](#conta_classe-1)
+        - [`conta_specie`](#conta_specie-1)
+        - [`salva`](#salva)
+        - [`carica`](#carica)
+```
 
 
 # Documentazione del progetto Zoo
@@ -459,5 +534,494 @@ Questo file contiene la definizione della classe `Animale` e delle sue sottoclas
 **Metodi Aggiuntivi**:
 - **`file_str`**: Restituisce una stringa formattata per la scrittura su file.
 
+### Introduzione al File GUI
 
+Il file GUI implementa una GUI (Graphical User Interface / Interfaccia Utente Grafica) per la gestione di uno zoo utilizzando la libreria `tkinter` in Python. Questa applicazione permette agli utenti di eseguire varie operazioni come l'inserimento di nuovi animali, la modifica della zona di un animale, la visualizzazione delle informazioni di un animale, e altre operazioni di gestione dello zoo. La GUI è progettata per essere intuitiva e fornire feedback all'utente in caso di errori o input non validi.
+
+### Struttura del File
+
+Il file è strutturato in una classe principale `ZooApp` che contiene tutti i metodi necessari per gestire l'interfaccia utente e le operazioni dello zoo. Ecco una panoramica delle principali sezioni del file:
+
+1. **Importazioni**:
+   - Importa le funzioni e le classi necessarie dai moduli `zoo` e `animali`.
+   - Importa la libreria `tkinter` per la creazione della GUI.
+
+2. **Classe `ZooApp`**:
+   - Contiene il costruttore `__init__` per inizializzare l'applicazione.
+   - Contiene il metodo `crea_widgets` per creare i widget dell'interfaccia utente.
+   - Contiene vari metodi per gestire le operazioni dello zoo, come l'inserimento di animali, la modifica delle zone, la visualizzazione delle informazioni, e il salvataggio/caricamento dei dati.
+
+3. **Metodi della Classe `ZooApp`**:
+   - `aggiorna_lista_animali`: Aggiorna la lista degli animali visualizzati nella GUI.
+   - `aggiungi_animale`: Aggiunge un nuovo animale allo zoo.
+   - `modifica_zona`: Modifica la zona di un animale esistente.
+   - `mostra_stringa_animale`: Mostra una descrizione testuale di un animale.
+   - `lista_nomi_specie`: Mostra una lista di nomi di animali appartenenti a una specie specifica.
+   - `list_nomi_ambiente`: Mostra una lista di nomi di animali che vivono in un determinato ambiente.
+   - `conta_animali_classe`: Conta il numero di animali appartenenti a una classe specifica.
+   - `carica_zoo`: Carica i dati dello zoo da un file di testo.
+   - `salva_zoo`: Salva i dati dello zoo su un file di testo.
+   - `uscita_app`: Chiude l'applicazione.
+
+### Dettagli delle Funzioni
+
+#### `__init__(self, root)`
+
+**Descrizione:**
+Inizializza l'applicazione ZooApp.
+
+**Parametri:**
+- `root`: La finestra principale dell'applicazione tkinter.
+
+**Corpo della funzione:**
+1. Imposta il titolo della finestra principale.
+2. Inizializza il dizionario `zoo` per memorizzare gli animali.
+3. Chiama il metodo `crea_widgets` per creare l'interfaccia utente.
+
+#### `crea_widgets(self)`
+
+**Descrizione:**
+Crea i widget dell'interfaccia utente.
+
+**Corpo della funzione:**
+1. Crea un frame per visualizzare gli animali con una `Listbox` e una barra di scorrimento.
+2. Crea un frame per i pulsanti delle operazioni.
+3. Aggiunge pulsanti per le seguenti operazioni:
+   - Aggiungi Animale
+   - Modifica Zona
+   - Mostra Animale
+   - Lista per Specie
+   - Lista per Ambiente
+   - Numero per Classe
+   - Carica Zoo
+   - Salva Zoo
+   - Esci
+4. Chiama il metodo `aggiorna_lista_animali` per popolare la lista degli animali.
+
+#### `aggiorna_lista_animali(self)`
+
+**Descrizione:**
+Aggiorna la `Listbox` con gli animali presenti nello zoo, divisi per zona.
+
+**Corpo della funzione:**
+1. Cancella tutti gli elementi attuali nella `Listbox`.
+2. Crea un dizionario `zone_animali` per raggruppare gli animali per zona.
+3. Itera su ogni animale nel dizionario `zoo` e aggiunge il nome dell'animale alla lista corrispondente alla sua zona.
+4. Aggiunge gli elementi alla `Listbox` in ordine alfabetico per zona.
+
+#### `aggiungi_animale(self)`
+
+**Descrizione:**
+Aggiunge un nuovo animale allo zoo.
+
+**Corpo della funzione:**
+1. Raccoglie informazioni sull'animale tramite dialoghi di input:
+   - Nome
+   - Specie
+   - Numero di zampe
+   - Verso
+   - Ambiente
+   - Sangue caldo
+   - Zona
+2. Verifica la validità dei dati inseriti.
+3. Crea un'istanza della classe appropriata (`Leone`, `Giraffa`, `Ippopotamo`, `Pinguino`, `Gufo`, `PescePagliaccio`) e la aggiunge al dizionario `zoo`.
+4. Aggiorna la lista degli animali.
+
+#### `modifica_zona(self)`
+
+**Descrizione:**
+Modifica la zona di un animale esistente.
+
+**Corpo della funzione:**
+1. Raccoglie il nome dell'animale e la nuova zona tramite dialoghi di input.
+2. Verifica la validità della nuova zona.
+3. Aggiorna la zona dell'animale nel dizionario `zoo`.
+4. Aggiorna la lista degli animali.
+
+#### `mostra_stringa_animale(self)`
+
+**Descrizione:**
+Mostra una descrizione testuale di un animale dato il suo nome.
+
+**Corpo della funzione:**
+1. Raccoglie il nome dell'animale tramite un dialogo di input.
+2. Verifica se l'animale esiste nel dizionario `zoo`.
+3. Mostra la descrizione dell'animale in una finestra di messaggio.
+
+#### `lista_nomi_specie(self)`
+
+**Descrizione:**
+Mostra una lista di nomi di animali appartenenti a una specie specifica.
+
+**Corpo della funzione:**
+1. Raccoglie la specie tramite un dialogo di input.
+2. Verifica la validità della specie.
+3. Crea una lista di nomi di animali appartenenti alla specie specificata.
+4. Mostra la lista in una finestra di messaggio.
+
+#### `list_nomi_ambiente(self)`
+
+**Descrizione:**
+Mostra una lista di nomi di animali che vivono in un determinato ambiente.
+
+**Corpo della funzione:**
+1. Raccoglie l'ambiente tramite un dialogo di input.
+2. Verifica la validità dell'ambiente.
+3. Crea una lista di nomi di animali che vivono nell'ambiente specificato.
+4. Mostra la lista in una finestra di messaggio.
+
+#### `conta_animali_classe(self)`
+
+**Descrizione:**
+Conta il numero di animali appartenenti a una classe specifica.
+
+**Corpo della funzione:**
+1. Raccoglie la classe tramite un dialogo di input.
+2. Verifica la validità della classe.
+3. Conta il numero di animali appartenenti alla classe specificata.
+4. Mostra il numero in una finestra di messaggio.
+
+#### `carica_zoo(self)`
+
+**Descrizione:**
+Carica i dati dello zoo da un file di testo.
+
+**Corpo della funzione:**
+1. Apre una finestra di dialogo per selezionare il file da caricare.
+2. Legge il file e aggiunge gli animali al dizionario `zoo`.
+3. Aggiorna la lista degli animali.
+
+#### `salva_zoo(self)`
+
+**Descrizione:**
+Salva i dati dello zoo su un file di testo.
+
+**Corpo della funzione:**
+1. Apre una finestra di dialogo per selezionare il file in cui salvare i dati.
+2. Scrive i dati degli animali nel file.
+
+#### `uscita_app(self)`
+
+**Descrizione:**
+Chiude la finestra principale e termina l'applicazione.
+
+**Corpo della funzione:**
+1. Chiama il metodo `destroy` della finestra principale per chiudere l'applicazione.
+
+### Come si utilizza una GUI in python?
+
+Per utilizzare questa classe, si crea un'istanza di `ZooApp` passando la finestra principale di `tkinter` come argomento. Quindi, bisogna avviare il loop principale di `tkinter` per visualizzare la GUI e gestire gli eventi.
+
+```python
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ZooApp(root)
+    root.mainloop()
+```
+
+### Introduzione al File `zoo.py`
+
+Il file `zoo.py` implementa una classe `Zoo` che gestisce un dizionario di animali. Ogni animale è rappresentato da un oggetto della classe `Animale` o una delle sue sottoclassi, e ogni animale è associato a una zona specifica nello zoo. La classe `Zoo` fornisce vari metodi per aggiungere, modificare, eliminare e interrogare gli animali nel dizionario, nonché per salvare e caricare lo stato dello zoo da un file.
+
+### Struttura del File
+
+Il file è strutturato nella classe `Zoo` che contiene tutti i metodi necessari per gestire il dizionario degli animali e le operazioni dello zoo. Ecco una panoramica delle principali sezioni del file:
+
+1. **Importazioni**:
+   - Importa le classi necessarie dal modulo `animali`.
+
+2. **Classe `Zoo`**:
+   - Contiene il costruttore `__init__` per inizializzare il dizionario degli animali.
+   - Contiene i metodi `__str__` e `__eq__` per rappresentare lo zoo come stringa e per l'uguaglianza profonda tra oggetti `Zoo`.
+   - Contiene vari metodi per gestire le operazioni dello zoo, come l'inserimento di animali, la modifica delle zone, la visualizzazione delle informazioni, e il salvataggio/caricamento dei dati.
+
+### Dettagli delle Funzioni
+
+#### `__init__(self)`
+
+**Descrizione:**
+Inizializza l'oggetto `Zoo` creando un dizionario vuoto per memorizzare gli animali.
+
+**Corpo della funzione:**
+1. Inizializza il dizionario `zoo` come un dizionario vuoto.
+
+#### `aggiungi_animale(self, nome, animale, zona)`
+
+**Descrizione:**
+Aggiunge un nuovo animale allo zoo.
+
+**Parametri:**
+- `nome`: Il nome dell'animale.
+- `animale`: Un oggetto della classe `Animale` o una delle sue sottoclassi.
+- `zona`: La zona in cui si trova l'animale (stringa composta da una lettera maiuscola seguita da un numero intero, es. "A1").
+
+**Corpo della funzione:**
+1. Verifica che `animale` sia un'istanza della classe `Animale`.
+2. Verifica che `zona` sia una stringa nel formato corretto.
+3. Aggiunge l'animale al dizionario `zoo` con il nome come chiave e una tupla (animale, zona) come valore.
+4. Restituisce il dizionario `zoo` aggiornato.
+
+#### `__str__(self)`
+
+**Descrizione:**
+Restituisce una stringa rappresentante lo zoo, utilizzando la rappresentazione stringa degli animali.
+
+**Corpo della funzione:**
+1. Inizializza una stringa vuota `descrizione`.
+2. Itera su ogni animale nel dizionario `zoo` e aggiunge una descrizione dell'animale alla stringa `descrizione`.
+3. Restituisce la stringa `descrizione` senza spazi finali.
+
+#### `__eq__(self, other)`
+
+**Descrizione:**
+Implementa l'uguaglianza profonda tra due oggetti `Zoo`.
+
+**Parametri:**
+- `other`: Un altro oggetto `Zoo` da confrontare.
+
+**Corpo della funzione:**
+1. Verifica che `other` sia un'istanza della classe `Zoo`.
+2. Verifica che i dizionari `zoo` di entrambi gli oggetti abbiano la stessa lunghezza.
+3. Itera su ogni animale nel dizionario `zoo` e verifica che ogni animale e la sua zona corrispondano nell'altro dizionario.
+4. Restituisce `True` se tutti gli animali e le zone corrispondono, altrimenti `False`.
+
+#### `inserisci(self, animale, zona)`
+
+**Descrizione:**
+Inserisce un nuovo animale nel dizionario `zoo` evitando duplicati e verificando che i parametri abbiano il tipo corretto e siano nel range di valori ammessi.
+
+**Parametri:**
+- `animale`: Un oggetto della classe `Animale` o una delle sue sottoclassi.
+- `zona`: La zona in cui si trova l'animale (stringa composta da una lettera maiuscola seguita da un numero intero, es. "A1").
+
+**Corpo della funzione:**
+1. Verifica che `animale` sia un'istanza della classe `Animale`.
+2. Verifica che `zona` sia una stringa nel formato corretto.
+3. Verifica che l'animale non sia già presente nel dizionario.
+4. Aggiunge l'animale al dizionario `zoo`.
+
+#### `animale(self, nome)`
+
+**Descrizione:**
+Restituisce l'oggetto animale con il nome specificato.
+
+**Parametri:**
+- `nome`: Il nome dell'animale da restituire.
+
+**Corpo della funzione:**
+1. Verifica che l'animale con il nome specificato sia presente nel dizionario.
+2. Restituisce l'oggetto animale corrispondente.
+
+#### `zona(self, nome)`
+
+**Descrizione:**
+Restituisce la zona in cui si trova l'animale con il nome specificato.
+
+**Parametri:**
+- `nome`: Il nome dell'animale di cui ottenere la zona.
+
+**Corpo della funzione:**
+1. Verifica che l'animale con il nome specificato sia presente nel dizionario.
+2. Restituisce la zona corrispondente.
+
+#### `elimina(self, nome)`
+
+**Descrizione:**
+Elimina l'animale con il nome specificato dal dizionario `zoo`.
+
+**Parametri:**
+- `nome`: Il nome dell'animale da eliminare.
+
+**Corpo della funzione:**
+1. Verifica che l'animale con il nome specificato sia presente nel dizionario.
+2. Elimina l'animale dal dizionario.
+
+#### `cambia_zona(self, nome, zona)`
+
+**Descrizione:**
+Cambia la zona dell'animale con il nome specificato.
+
+**Parametri:**
+- `nome`: Il nome dell'animale da spostare.
+- `zona`: La nuova zona in cui si trova l'animale (stringa composta da una lettera maiuscola seguita da un numero intero, es. "A1").
+
+**Corpo della funzione:**
+1. Verifica che l'animale con il nome specificato sia presente nel dizionario.
+2. Verifica che `zona` sia una stringa nel formato corretto.
+3. Aggiorna la zona dell'animale nel dizionario.
+4. Restituisce la tupla (animale, zona) aggiornata.
+
+#### `zone(self)`
+
+**Descrizione:**
+Restituisce la lista delle zone presenti nel dizionario `zoo`.
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista`.
+2. Itera su ogni animale nel dizionario e aggiunge la zona alla lista.
+3. Restituisce la lista delle zone senza duplicati.
+
+#### `animali_zona(self, zona)`
+
+**Descrizione:**
+Restituisce la lista dei nomi degli animali presenti nella zona specificata.
+
+**Parametri:**
+- `zona`: La zona di interesse.
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista`.
+2. Itera su ogni animale nel dizionario e aggiunge il nome dell'animale alla lista se la zona corrisponde.
+3. Restituisce la lista dei nomi degli animali nella zona specificata.
+
+#### `zone_animali(self)`
+
+**Descrizione:**
+Restituisce un dizionario che ha come chiavi le zone e come valori la lista degli animali presenti in quella zona.
+
+**Corpo della funzione:**
+1. Inizializza un dizionario vuoto `dict_zone`.
+2. Itera su ogni animale nel dizionario e aggiunge la zona come chiave nel dizionario e l'animale alla lista dei valori corrispondente.
+3. Restituisce il dizionario con le zone e gli animali presenti in ciascuna zona.
+
+#### `animali_classe(self, classe)`
+
+**Descrizione:**
+Restituisce la lista dei nomi degli animali della classe specificata.
+
+**Parametri:**
+- `classe`: La classe di interesse (es. Mammifero).
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista_nomi`.
+2. Verifica che `classe` sia una stringa.
+3. Itera su ogni animale nel dizionario e aggiunge il nome dell'animale alla lista se la classe corrisponde.
+4. Verifica che la classe sia una delle classi esistenti.
+5. Restituisce la lista dei nomi degli animali della classe specificata.
+
+#### `animali_specie(self, specie)`
+
+**Descrizione:**
+Restituisce la lista dei nomi degli animali della specie specificata.
+
+**Parametri:**
+- `specie`: La specie di interesse (es. Leone).
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista_nomi`.
+2. Verifica che `specie` sia una stringa.
+3. Itera su ogni animale nel dizionario e aggiunge il nome dell'animale alla lista se la specie corrisponde.
+4. Restituisce la lista dei nomi degli animali della specie specificata.
+
+#### `animali_ambiente(self, ambiente)`
+
+**Descrizione:**
+Restituisce la lista dei nomi degli animali che vivono nell'ambiente specificato.
+
+**Parametri:**
+- `ambiente`: L'ambiente di interesse (es. Terra).
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista_nomi`.
+2. Verifica che `ambiente` sia una stringa.
+3. Itera su ogni animale nel dizionario e aggiunge il nome dell'animale alla lista se l'ambiente corrisponde.
+4. Verifica che l'ambiente sia uno degli ambienti esistenti.
+5. Restituisce la lista dei nomi degli animali che vivono nell'ambiente specificato.
+
+#### `animali_con_zampe_almeno(self, numero_zampe=2)`
+
+**Descrizione:**
+Restituisce la lista dei nomi degli animali che hanno almeno `numero_zampe` zampe.
+
+**Parametri:**
+- `numero_zampe`: Il numero minimo di zampe (default=2).
+
+**Corpo della funzione:**
+1. Inizializza una lista vuota `lista_nomi`.
+2. Verifica che `numero_zampe` sia un intero non negativo.
+3. Itera su ogni animale nel dizionario e aggiunge il nome dell'animale alla lista se il numero di zampe è maggiore o uguale a `numero_zampe`.
+4. Restituisce la lista dei nomi degli animali che hanno almeno `numero_zampe` zampe.
+
+#### `conta_sangue(self, sangue_caldo)`
+
+**Descrizione:**
+Restituisce il numero di animali con sangue caldo o freddo.
+
+**Parametri:**
+- `sangue_caldo`: `True` se si vogliono contare gli animali con sangue caldo, `False` altrimenti.
+
+**Corpo della funzione:**
+1. Inizializza una variabile `count` a 0.
+2. Verifica che `sangue_caldo` sia un booleano.
+3. Itera su ogni animale nel dizionario e incrementa `count` se il sangue corrisponde.
+4. Restituisce il numero di animali con sangue caldo o freddo.
+
+#### `conta_classe(self, classe)`
+
+**Descrizione:**
+Restituisce il numero di animali della classe specificata.
+
+**Parametri:**
+- `classe`: La classe di interesse (es. Mammifero).
+
+**Corpo della funzione:**
+1. Inizializza una variabile `count` a 0.
+2. Verifica che `classe` sia una stringa.
+3. Itera su ogni animale nel dizionario e incrementa `count` se la classe corrisponde.
+4. Verifica che la classe sia una delle classi esistenti.
+5. Restituisce il numero di animali della classe specificata.
+
+#### `conta_specie(self, specie)`
+
+**Descrizione:**
+Restituisce il numero di animali della specie specificata.
+
+**Parametri:**
+- `specie`: La specie di interesse (es. Leone).
+
+**Corpo della funzione:**
+1. Inizializza una variabile `count` a 0.
+2. Verifica che `specie` sia una stringa.
+3. Itera su ogni animale nel dizionario e incrementa `count` se la specie corrisponde.
+4. Restituisce il numero di animali della specie specificata.
+
+#### `salva(self, nome_file)`
+
+**Descrizione:**
+Salva lo stato dell'oggetto `Zoo` in un file di testo.
+
+**Parametri:**
+- `nome_file`: Il nome del file in cui salvare lo stato.
+
+**Corpo della funzione:**
+1. Apre il file in modalità scrittura.
+2. Itera su ogni animale nel dizionario e scrive i dettagli dell'animale nel file.
+3. Chiude il file.
+
+#### `carica(self, nome_file)`
+
+**Descrizione:**
+Carica lo stato dell'oggetto `Zoo` da un file di testo, sovrascrivendo lo stato corrente se il caricamento va a buon fine.
+
+**Parametri:**
+- `nome_file`: Il nome del file da cui caricare lo stato.
+
+**Corpo della funzione:**
+1. Inizializza il dizionario `zoo` come un dizionario vuoto.
+2. Apre il file in modalità lettura.
+3. Itera su ogni riga del file, estrae i dettagli dell'animale e lo aggiunge al dizionario `zoo`.
+4. Verifica che il file sia nel formato corretto.
+5. Chiude il file.
+
+### Esempio di Utilizzo
+
+Per utilizzare la classe `Zoo`, si crea un'istanza della classe e si chiamano i metodi appropriati per gestire gli animali nello zoo. Ecco un esempio di come utilizzare la classe:
+
+```python
+zoo = Zoo()
+leone = Leone("Simba", True, 4, "Ruggito", ["Terra"], 7)
+zoo.inserisci(leone, "A1")
+print(zoo)
+zoo.salva("zoo_salvato.txt")
+```
 
